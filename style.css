@@ -1,0 +1,127 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#581845 ;
+
+}
+.img-slider
+{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.img-slider .slide
+{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+
+}
+.img-slider .slide.active
+{
+    clip-path: circle(150.0% at 0 50%);
+    transition: 2s;
+    transition-property: clip-path;
+}
+.img-slider .slide img
+{
+    z-index: 1;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.img-slider .slide .info
+{
+    position: absolute;
+    top: 0;
+    padding: 15px 30px ;
+}
+
+.img-slider .slide .info h2
+{
+    color: darkblue;
+    font-size: 45px;
+    text-transform: uppercase;
+    font-weight:bolder;
+    letter-spacing: 15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.img-slider .slide .info p
+{
+    color:darkblue;
+    font-size: 19px;
+    width: 50%;
+    padding: 0px;
+    border-radius: 4px;
+    font-weight: 300;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.img-slider .navigation
+{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.img-slider .navigation .btn
+{
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.img-slider .navigation .btn.active
+{
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media  (max-width: 360px)
+{
+    .img-slider{
+        width: 600px;
+        height: 375px;
+
+    }
+    .img-slider .slide .info
+    {
+        padding: 10px 25px;
+    }
+    .img-slider .slide .info h2
+    {
+    font-size: 45px;    
+    }
+    .img-slider .slide .info p
+    {
+      width: 70%;
+      font-size: 15px;  
+    }
+    .img-slider .navigation
+    {
+        top: 120%;
+   
+    }
+    
+}   
